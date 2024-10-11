@@ -15,11 +15,7 @@ namespace periode.Data.DbContexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Evaluation>()
-            .HasOne(e => e.etat)
-            .WithMany(et => et.evaluation)
-            .HasForeignKey(e => e.etat_id)
-            .OnDelete(DeleteBehavior.Cascade);
+            
         }
     }
 }

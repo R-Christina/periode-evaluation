@@ -55,7 +55,11 @@ namespace periode.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Evaluation>>> GetEvaluation()
         {
-            var evaluations = await _dbContext.evaluation.Include(e => e.etat).ToListAsync();
+            var evaluations = await _dbContext.evaluation
+                .Include(e => e.etat)
+                .OrderByDescending(e => e.eval_annee)
+                .ToListAsync();
+
             return Ok(evaluations);
         }
 

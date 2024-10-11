@@ -8,8 +8,5 @@ namespace periode.Models
         [Key]
         public int etat_id {get; set;}
         public required string etat_nom {get; set;}
-
-        [JsonIgnore]
-        public virtual ICollection<Evaluation>? evaluation { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 namespace periode.Models
@@ -12,6 +13,8 @@ namespace periode.Models
         public DateTime fixation_objectif { get; set; }
         public DateTime mi_parcours { get; set; }
         public DateTime final { get; set; }
+
+        [ForeignKey("etat")]
         public int etat_id { get; set; }
 
         public Etat_eval? etat { get; set; }
